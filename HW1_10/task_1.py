@@ -39,6 +39,13 @@ class Student:
         else:
             return 'Ошибка'
 
+    def __lt__(self, other):
+        if isinstance(other, Mentor):
+            print('Это лектор!')
+            return
+        else:
+            return self.average() < other.average()
+
     def average(self):
         listing = []
         av = 0
@@ -82,6 +89,14 @@ class Lecturer(Mentor, Student):
                 f'Средняя оценка за лекции: {self.average()}\n'
                 )
 
+    def __lt__(self, other):
+        super(Lecturer, self).__lt__(other)
+        if not isinstance(other, Mentor):
+            print('Это студент!')
+            return
+        else:
+            return self.average() < other.average()
+
 
 first_student = Student('Ivan', 'Ivanov', 'man')
 first_student.courses_attached += ['Python']
@@ -120,4 +135,4 @@ lecturer_rate = [{first_student.rate_lecturer(second_lecturer, 'Git', 5)},
                  ]
 
 print(first_student)
-print(second_student)
+print(first_lecturer > second_lecturer)
