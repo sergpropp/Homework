@@ -53,14 +53,17 @@ class Student:
         return ', '.join(self.courses_in_progress)
 
     def course_print2(self):
-        return ', '.join(self.finished_courses)
+        if self.finished_courses:
+            return ', '.join(self.finished_courses)
+        else:
+            return 'нет завершенных курсов'
 
     def __str__(self):
         return (f'Имя: {self.name}\n'
                 f'Фамилия: {self.surname}\n'
                 f'Средняя оценка за домашние задания: {self.average()}\n'
                 f'Курсы в процессе изучения: {self.course_print()}\n'
-                f'Завершенные курсы: {self.course_print2()}'
+                f'Завершенные курсы: {self.course_print2()}\n'
                 )
 
     def add_courses(self, course_name):
@@ -117,4 +120,4 @@ lecturer_rate = [{first_student.rate_lecturer(second_lecturer, 'Git', 5)},
                  ]
 
 print(first_student)
-
+print(second_student)
