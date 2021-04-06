@@ -121,17 +121,17 @@ first_lecturer.courses_in_progress += ['Python']
 second_lecturer = Lecturer('Daria', 'Donzova')
 second_lecturer.courses_in_progress += ['Git']
 
-students_rate = [{first_mentor.rate_hw(first_student, 'Python', 9)},
-                 {first_mentor.rate_hw(first_student, 'Python', 10)},
-                 {first_mentor.rate_hw(first_student, 'Python', 8)},
-                 {second_mentor.rate_hw(second_student, 'Git', 6)},
-                 {second_mentor.rate_hw(second_student, 'Git', 5)},
-                 {second_mentor.rate_hw(second_student, 'Git', 4)}
+students_rate = [first_mentor.rate_hw(first_student, 'Python', 9),
+                 first_mentor.rate_hw(first_student, 'Python', 10),
+                 first_mentor.rate_hw(first_student, 'Python', 8),
+                 second_mentor.rate_hw(second_student, 'Git', 6),
+                 second_mentor.rate_hw(second_student, 'Git', 5),
+                 second_mentor.rate_hw(second_student, 'Git', 4)
                  ]
-lecturer_rate = [{first_student.rate_lecturer(second_lecturer, 'Git', 5)},
-                 {second_student.rate_lecturer(second_lecturer, 'Git', 10)},
-                 {first_student.rate_lecturer(first_lecturer, 'Python', 10)},
-                 {second_student.rate_lecturer(first_lecturer, 'Python', 8)}
+lecturer_rate = [first_student.rate_lecturer(second_lecturer, 'Git', 5),
+                 second_student.rate_lecturer(second_lecturer, 'Git', 10),
+                 first_student.rate_lecturer(first_lecturer, 'Python', 10),
+                 second_student.rate_lecturer(first_lecturer, 'Python', 8)
                  ]
 
 print(first_student)
