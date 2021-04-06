@@ -135,4 +135,4 @@ lecturer_rate = [{first_student.rate_lecturer(second_lecturer, 'Git', 5)},
                  ]
 
 print(first_student)
-print(first_lecturer > second_lecturer)
+print(first_student > second_student)
